@@ -1,0 +1,80 @@
+<script type='text/javascript'>
+	function validate()
+	{
+		var fname=document.getElementById('txtimg').value;
+		var ext=fname.substr(fname.lastIndexOf('.')+1).toLowerCase().trim();
+		if(document.getElementById('txtimg').value=="")
+		{
+			alert("Please Select Hall Image");
+			return false;
+		}else{
+			if(!(ext=="jpg" || ext=="jpeg" || ext=="png"))
+			{
+				//alert(extension);
+				alert("Please Select Hall Image in Format like jpg png or jpeg");
+				return false;
+			}
+		}
+	}
+</script>
+    
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-title">
+                        <div class="section-title">
+                            <span>A Memorable Event With Venue Reservation</span>
+                            <h2>MANAGE HALL IMAGES</h2>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <form method="post" name="form1" action="/upload_hall_image" class="contact-form" enctype="multipart/form-data">
+                        <div class="row">
+                          
+                            
+                            <div class="col-lg-12">
+                                <input type="text"  placeholder="Enter Hall ID" name="txthid" value="<%= hid %>">
+
+                                <input type="file"  name="txtimg" id="txtimg">
+
+                                <button type="submit" name="btnupload" onclick="return validate();">UPLOAD IMAGE</button>
+							
+                            </div>
+							
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-7">
+                
+                      <% if(imgitems.length){ %>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>IMAGES ID</th>
+                                    <th>IMAGES</th>
+                                    
+                                    <th>DELETE</th>
+                                </tr>
+                            <% for(i=0;i<imgitems.length;i++){ %>
+                                    <tr>
+                                        <td><%= imgitems[i].image_id %></td>
+                                        <td><img src="<%= imgitems[i].image_path %>" style="width:150px; height:150px;"></td>
+                                       
+                                        <td><a href="/delete_hall_images/<%= imgitems[i].image_id %>/<%= imgitems[i].hall_id %>">DELETE</a></td>
+                                    </tr>
+                                <% } %>
+                            </table>
+                      <% }else{ %>
+                            <h2>No Images Found</h2>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->

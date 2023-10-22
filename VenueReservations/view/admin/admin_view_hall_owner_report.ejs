@@ -1,0 +1,59 @@
+
+    
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-title">
+                        <div class="section-title">
+                            <span>A Memorable Event With Venue Reservation</span>
+                            <h2>HALL OWNER DETAIL REPORT</h2>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+             
+                <div class="col-lg-12">
+                
+                      <% if(hitems.length){ %>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>HALL OWNER ID</th>
+                                    <th>HALL OWNER NAME</th>
+                                    <th>ADDRESS</th>
+                                    <th>CITY</th>
+                                    <th>MOBILE NO</th>
+                                    <th>EMAIL ID</th>
+                                    <th>REGISTRATION DATE</th>
+                                    <th>LICENSER IMAGE</th>
+                                    
+                                    <th>VIEW HALL DETAIL</th>
+                                    
+                                </tr>
+                            <% for(i=0;i<hitems.length;i++){ %>
+                                    <tr>
+                                        <td><%= hitems[i].hall_owner_id %></td>
+                                        <td><%= hitems[i].hall_owner_name %></td>
+                                        <td><%= hitems[i].address %></td>
+                                        <td><%= hitems[i].city %></td>
+                                        <td><%= hitems[i].mobile_no %></td>
+                                        <td><%= hitems[i].email_id %></td>
+                                        <td><%= hitems[i].regis_date %></td>
+                                        <td><a href="<%= hitems[i].lic_path %>" target="_blank"><img src='<%= hitems[i].lic_path %>' style="width:150px; height:150px;"></a></td>
+                                        <td><a href="/admin_view_hall_owner_wise_hall_detail_report/<%= hitems[i].hall_owner_id %>">VIEW HALL DETAIL</a></td>
+                                        
+                                    </tr>
+                                <% } %>
+                            </table>
+                      <% }else{ %>
+                            <h2>No Hall Owner Found</h2>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->

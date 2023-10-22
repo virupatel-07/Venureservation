@@ -1,0 +1,74 @@
+
+<!-- Contact Section Begin -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <span>A Memorable Event With Venue Reservation</span>
+                        <h2>VIEW BOOKING DETAIL</h2>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+     
+            <div class="col-lg-12">
+                <% if(bitems.length){ %>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>BOOKING ID</th>
+                            <th>BOOKING DATE</th>
+                            <th>EVENT START DATE</th>
+                            <th>EVENT END DATE</th>
+                            <th>NO OF DAYS</th>
+                            <th>HALL NAME</th>
+                            
+                            <th>TIME TYPE</th>
+                            <th>PER DAY CHARGE</th>
+                            <th>CUSTOMER NAME</th>
+                            <th>ADDRESS</th>
+                            <th>MOBILE NO</th>
+                            
+                        </tr>
+                    <% for(i=0;i<bitems.length;i++){ %>
+                            <tr>
+                                <td><%= bitems[i].booking_id %></td>
+                                <td><%= bitems[i].booking_date %></td>
+                                <td><%= bitems[i].event_start_date %></td>
+                                <td><%= bitems[i].event_end_date %></td>
+                                <td><%= bitems[i].no_of_days %></td>
+                                <% for(j=0;j<hitems.length;j++){ %>
+                                    <% if(hitems[j].hall_id==bitems[i].hall_id){ %>
+                                        <td><%= hitems[j].hall_name %></td>
+                                    <% } %>
+                                <% } %>
+                                <% for(j=0;j<chitems.length;j++){ %>
+                                    <% if(chitems[j].charge_id==bitems[i].charge_id){ %>
+                                        <td><%= chitems[j].time_type %></td>
+                                    <% } %>
+                                <% } %>
+                                <td><%= bitems[i].hall_charge %></td>
+                                <% for(j=0;j<citems.length;j++){ %>
+                                    <% if(citems[j].customer_id==bitems[i].customer_id){ %>
+                                        <td><%= citems[j].customer_name %></td>
+                                        <td><%= citems[j].address %></td>
+                                        <td><%= citems[j].mobile_no %></td>
+                                    <% } %>
+                                <% } %>
+                                
+                            </tr>
+                        <% } %>
+                    </table>
+              <% }else{ %>
+                    <h2>No Booking Found <br/><br/><br/><br/><br/><br/></h2>
+            <% } %>
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->

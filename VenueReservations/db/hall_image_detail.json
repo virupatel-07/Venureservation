@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "6430e4828b3b35a46a874aa2"
+  },
+  "image_id": 1,
+  "hall_id": 1,
+  "image_path": "/hallimg/HI1_7002.jpg"
+},{
+  "_id": {
+    "$oid": "6430e4888b3b35a46a874aa3"
+  },
+  "image_id": 2,
+  "hall_id": 1,
+  "image_path": "/hallimg/HI2_7609.jpg"
+},{
+  "_id": {
+    "$oid": "6430e48e8b3b35a46a874aa4"
+  },
+  "image_id": 3,
+  "hall_id": 1,
+  "image_path": "/hallimg/HI3_8696.jpg"
+},{
+  "_id": {
+    "$oid": "6430ebeacdd28a2d441410e9"
+  },
+  "image_id": 4,
+  "hall_id": 2,
+  "image_path": "/hallimg/HI4_6745.jpg"
+},{
+  "_id": {
+    "$oid": "6430ebf5cdd28a2d441410ea"
+  },
+  "image_id": 5,
+  "hall_id": 2,
+  "image_path": "/hallimg/HI5_1171.jpg"
+},{
+  "_id": {
+    "$oid": "6430ebfdcdd28a2d441410eb"
+  },
+  "image_id": 6,
+  "hall_id": 2,
+  "image_path": "/hallimg/HI6_8228.jpg"
+}]

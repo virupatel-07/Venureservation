@@ -1,0 +1,58 @@
+
+    
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-title">
+                        <div class="section-title">
+                            <span>A Memorable Event With Venue Reservation</span>
+                            <h2>HALL OWNER DETAIL REPORT</h2>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+             
+                <div class="col-lg-12">
+                
+                      <% if(citems.length){ %>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>CUSTOMER ID</th>
+                                    <th>CUSTOMER NAME</th>
+                                    <th>ADDRESS</th>
+                                    <th>CITY</th>
+                                    <th>MOBILE NO</th>
+                                    <th>EMAIL ID</th>
+                                    <th>GENDER</th>
+                                    
+                                    <th>VIEW BOOKING</th>
+                                    
+                                </tr>
+                            <% for(i=0;i<citems.length;i++){ %>
+                                    <tr>
+                                        <td><%= citems[i].customer_id %></td>
+                                        <td><%= citems[i].customer_name %></td>
+                                        <td><%= citems[i].address %></td>
+                                        <td><%= citems[i].city %></td>
+                                        <td><%= citems[i].mobile_no %></td>
+                                        <td><%= citems[i].email_id %></td>
+                                        <td><%= citems[i].gender %></td>
+                                        
+                                        <td><a href="/admin_view_customer_wise_booking_report/<%= citems[i].customer_id %>">VIEW BOOKING</a></td>
+                                        
+                                    </tr>
+                                <% } %>
+                            </table>
+                      <% }else{ %>
+                            <h2>No Hall Owner Found</h2>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->

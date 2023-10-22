@@ -1,0 +1,124 @@
+<script type='text/javascript'>
+	function validate()
+	{
+		if(form1.selhall.value=="0")
+		{
+			alert("Please Select Hall");
+			form1.selhall.focus();
+			return false;
+		}
+		
+		if(form1.seltime.value=="0")
+		{
+			alert("Please Select Time Type");
+			form1.seltime.focus();
+			return false;
+		}
+				
+		var v=/^[0-9]+$/
+		if(form1.txthcharge.value=="")
+		{
+			alert("Please Enter Hall Charge");
+			form1.txthcharge.focus();
+			return false;
+		}else{
+			if(!v.test(form1.txthcharge.value))
+			{
+				alert("Please Enter Only Digits in Hall Charge");
+				form1.txthcharge.focus();
+				return false;
+			}
+		}
+	}
+</script>
+ <!-- Contact Section Begin -->
+ <section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <span>A Memorable Event With Venue Reservation</span>
+                        <h2>MANAGE HALL CHARGE</h2>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="post" name="form1" action="/add_charges" class="contact-form">
+                    <div class="row">
+                      
+
+                         <div class="col-lg-12">
+                            <select name="selhall" >
+                                <option value="0">--Select Hall--</option>
+                                <% for(i=0;i<hitems.length;i++){%>
+                                    <option value="<%= hitems[i].hall_id %>"><%= hitems[i].hall_name %></option>
+                                    <% } %>
+                            </select>
+                        
+                        </div>
+                        <div class="col-lg-12">
+                            <select name="seltime" >
+                                <option value="0">--Select Time Type--</option>
+                                <option value="12hours">12 Hours</option>
+                                <option value="24hours">24 Hours</option>
+                            </select>
+                        
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter Hall Charge" name="txthcharge" value="">
+                        
+                        </div>
+                        
+                        <div class="col-lg-12">
+                       
+                            <button type="submit" name="btnsave" onclick="return validate();">SAVE</button>
+                        
+                         </div>
+                        
+                    </div>
+               </form>
+            </div>
+             
+            <div class="col-lg-6">
+                <% if(citems.length){ %>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>CHARGES ID</th>
+                            <th>HALL ID</th>
+                            <th>TIME TYPE</th>
+                            <th>CHARGES</th>
+                            
+                            <th>DELETE</th>
+                        </tr>
+                    <% for(i=0;i<citems.length;i++){ %>
+                            <tr>
+                                <td><%= citems[i].charge_id %></td>
+                                <% for(j=0;j<hitems.length;j++){ %>
+                                    <% if(hitems[j].hall_id==citems[i].hall_id){ %>
+                                        <td><%= hitems[j].hall_name %></td>
+                                        
+                                    <% } %>
+                                <% } %>
+                                <td><%= citems[i].time_type %></td>
+                                <td><%= citems[i].hall_charge %></td>
+                                
+                                <td><a href="/delete_charges/<%= citems[i].charge_id %>">DELETE</a></td>
+                            </tr>
+                        <% } %>
+                    </table>
+              <% }else{ %>
+                    <h2>No Charges Found</h2>
+            <% } %>
+            
+                  
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->

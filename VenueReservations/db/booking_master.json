@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "643385c9484840fb9acf2483"
+  },
+  "booking_id": 1,
+  "booking_date": "2023-4-10",
+  "event_start_date": "2023-4-20",
+  "event_end_date": "2023-4-21",
+  "no_of_days": 2,
+  "hall_id": 1,
+  "charge_id": 1,
+  "hall_charge": "15000",
+  "customer_id": 1
+}]

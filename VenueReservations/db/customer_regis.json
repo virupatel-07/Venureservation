@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "642bc2f73d1375a9b156ec52"
+  },
+  "customer_id": 1,
+  "customer_name": "dhruv",
+  "address": "abrama",
+  "city": "valsad",
+  "mobile_no": "9876543210",
+  "email_id": "dhruv@yahoo.com",
+  "pwd": "111111",
+  "gender": "MALE"
+}]

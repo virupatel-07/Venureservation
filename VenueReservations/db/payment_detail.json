@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "643385db484840fb9acf2486"
+  },
+  "pay_id": 1,
+  "booking_id": 1,
+  "card_tye": "Debit Card",
+  "card_no": "1234567890123456",
+  "cvv_no": "123",
+  "bank_name": "bob",
+  "card_holder_name": "Dhruv Patel",
+  "expiry_date": "Mar-2027",
+  "amount": 30000
+}]

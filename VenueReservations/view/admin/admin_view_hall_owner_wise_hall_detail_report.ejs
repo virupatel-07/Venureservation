@@ -1,0 +1,65 @@
+
+    
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-title">
+                        <div class="section-title">
+                            <span>A Memorable Event With Venue Reservation</span>
+                            <h2>HALL OWNER WISE HALL DETAIL REPORT</h2>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <% if(hitems.length){ %>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>HALL ID</th>
+                                <th>HALL NAME</th>
+                                <th>ADDRESS</th>
+                                <th>CAPACITY</th>
+                                <th>DESCRIPTION</th>
+                                <th>NO OF CHAIRS</th>
+                                <th>NO OF SOFAS</th>
+                                <th>NO OF ROOMS</th>
+                                <th>CATEGORY</th>
+                                <th>VIEW BOOKING</th>
+                                
+                            </tr>
+                        <% for(i=0;i<hitems.length;i++){ %>
+                                <tr>
+                                    <td><%= hitems[i].hall_id %></td>
+                                    <td><%= hitems[i].hall_name %></td>
+                                    <td><%= hitems[i].address %></td>
+                                    <td><%= hitems[i].capacity %></td>
+                                    <td><%= hitems[i].description %></td>
+                                    <td><%= hitems[i].no_of_chairs %></td>
+                                    <td><%= hitems[i].no_of_sofas %></td>
+                                    <td><%= hitems[i].no_of_rooms %></td>
+                                    <% for(j=0;j<catitems.length;j++){ %>
+                                        <% if(catitems[j].cat_id==hitems[i].cat_id){ %>
+                                            <td><%= catitems[j].category %></td>
+                                            
+                                        <% } %>
+                                    <% } %>
+                                   
+                                    <td><a href="/admin_view_hall_wise_booking_report/<%= hitems[i].hall_id %>">VIEW BOOKING</a></td>
+                                    
+                                </tr>
+                            <% } %>
+                        </table>
+                  <% }else{ %>
+                        <h2>No Category Found</h2>
+                <% } %>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->

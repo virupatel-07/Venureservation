@@ -1,0 +1,240 @@
+<script type='text/javascript'>
+	function validate()
+	{
+		var v=/^[a-zA-Z0-9 ]+$/
+		if(form1.txthname.value=="")
+		{
+			alert("Please Enter Hall Name");
+			form1.txthname.focus();
+			return false;
+		}else{
+			if(!v.test(form1.txthname.value))
+			{
+				alert("Please Enter Only Alphabets and Digits in Hall Name");
+				form1.txthname.focus();
+				return false;
+			}
+		}
+		
+		if(form1.txtadd.value=="")
+		{
+			alert("Please Enter Hall Address");
+			form1.txtadd.focus();
+			return false;
+		}
+		
+        var v=/^[0-9]+$/
+		if(form1.txtchairs.value=="")
+		{
+			alert("Please Enter No of Chairs");
+			form1.txtchairs.focus();
+			return false;
+		}else if((parseInt(form1.txtchairs.value))<=0){
+			alert("Please Enter No of Chairs Greater than 0");
+			form1.txtchairs.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtchairs.value))
+			{
+				alert("Please Enter Only Digits in No of Chairs");
+				form1.txtchairs.focus();
+				return false;
+			}
+		}
+
+        if(form1.txtsofas.value=="")
+		{
+			alert("Please Enter No of Sofas");
+			form1.txtsofas.focus();
+			return false;
+		}else if(parseInt(form1.txtsofas.value)<=0){
+			alert("Please Enter No of Sofa Greater than 0");
+			form1.txtsofas.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtsofas.value))
+			{
+				alert("Please Enter Only Digits in No of Sofa");
+				form1.txtsofas.focus();
+				return false;
+			}
+		}
+
+		var v=/^[0-9]+$/
+		if(form1.txtcapacity.value=="")
+		{
+			alert("Please Enter Hall Capacity");
+			form1.txtcapacity.focus();
+			return false;
+		}else if(parseInt(form1.txtcapacity.value)<=0){
+			alert("Please Enter Hall Capacity Greater than 0");
+			form1.txtcapacity.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtcapacity.value))
+			{
+				alert("Please Enter Only Digits in Hall Capacity");
+				form1.txtcapacity.focus();
+				return false;
+			}
+		}
+		
+		if(form1.txtdesc.value=="")
+		{
+			alert("Please Enter Hall Description");
+			form1.txtdesc.focus();
+			return false;
+		}
+
+
+        if(form1.txtrooms.value=="")
+		{
+			alert("Please Enter No of Rooms");
+			form1.txtrooms.focus();
+			return false;
+		}else if(parseInt(form1.txtrooms.value)<=0){
+			alert("Please Enter No Of Rooms");
+			form1.txtrooms.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtrooms.value))
+			{
+				alert("Please Enter Only Digits in No of Rooms");
+				form1.txtrooms.focus();
+				return false;
+			}
+		}
+
+        if(form1.selcat.value=="0")
+		{
+			alert("Please Select Category");
+			form1.selcat.focus();
+			return false;
+		}
+	}
+</script>
+<!-- Contact Section Begin -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <span>A Memorable Event With Venue Reservation</span>
+                        <h2>MANAGE HALL DETAIL</h2>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="post" name="form1" class="contact-form" action="/add_hall_detail">
+                    <div class="row">
+                      
+                        
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter Hall Name" name="txthname" >
+                        
+                        </div>
+                         <div class="col-lg-12">
+                            <textarea placeholder="Enter Hall Address" name="txtadd"></textarea>
+                            
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter No of Chairs" name="txtchairs" >
+                        
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter No of Sofas" name="txtsofas" >
+                        
+                        </div>
+                    </div>
+               
+            </div>
+               <div class="col-lg-6">
+                
+                    <div class="row contact-form">
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter Hall Capacity" name="txtcapacity" >
+                        
+                        </div>
+                       
+                       
+                         <div class="col-lg-12">
+                            <textarea placeholder="Enter Hall Description" name="txtdesc"></textarea>
+                            
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text"  placeholder="Enter No of Rooms" name="txtrooms" >
+                        
+                        </div>
+                        <div class="col-lg-12">
+                            <select  name="selcat" >
+                                <option value="0">Select Category</option>
+                            <% for(i=0;i<catitems.length;i++){%>
+                                <option value="<%= catitems[i].cat_id %>"><%= catitems[i].category %></option>
+                                <% } %>
+                            </select>
+                        
+                        </div>
+                        <div class="col-lg-12">
+                        
+                            <button type="submit" name="btnsave" onclick="return validate();">SAVE</button>
+                       
+                         </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-12">
+                <% if(hitems.length){ %>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>HALL ID</th>
+                            <th>HALL NAME</th>
+                            <th>ADDRESS</th>
+                            <th>CAPACITY</th>
+                            <th>DESCRIPTION</th>
+                            <th>NO OF CHAIRS</th>
+                            <th>NO OF SOFAS</th>
+                            <th>NO OF ROOMS</th>
+                            <th>CATEGORY</th>
+                            <th>EDIT</th>
+                            
+                        </tr>
+                    <% for(i=0;i<hitems.length;i++){ %>
+                            <tr>
+                                <td><%= hitems[i].hall_id %></td>
+                                <td><%= hitems[i].hall_name %></td>
+                                <td><%= hitems[i].address %></td>
+                                <td><%= hitems[i].capacity %></td>
+                                <td><%= hitems[i].description %></td>
+                                <td><%= hitems[i].no_of_chairs %></td>
+                                <td><%= hitems[i].no_of_sofas %></td>
+                                <td><%= hitems[i].no_of_rooms %></td>
+                                <% for(j=0;j<catitems.length;j++){ %>
+                                    <% if(catitems[j].cat_id==hitems[i].cat_id){ %>
+                                        <td><%= catitems[j].category %></td>
+                                        
+                                    <% } %>
+                                <% } %>
+                               
+                                <td><a href="/hall_owner_edit_hall_detail/<%= hitems[i].hall_id %>">EDIT</a></td>
+                                <td><a href="/hall_owner_manage_hall_images/<%= hitems[i].hall_id %>">VIEW IMAGES</a></td>
+                            </tr>
+                        <% } %>
+                    </table>
+              <% }else{ %>
+                    <h2>No Category Found</h2>
+            <% } %>
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->

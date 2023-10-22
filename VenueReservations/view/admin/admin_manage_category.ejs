@@ -1,0 +1,78 @@
+<script type='text/javascript'>
+	function validate()
+	{
+		var v=/^[a-zA-Z ]+$/
+		if(form1.txtcat.value=="")
+		{
+			alert("Please Enter Category");
+			form1.txtcat.focus();
+			return false;
+		}else{
+			if(!v.test(form1.txtcat.value))
+			{
+				alert("Please Enter Only Alphabets in Category");
+				form1.txtcat.focus();
+				return false;
+			}
+		}
+	}
+</script>
+    
+    <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-title">
+                        <div class="section-title">
+                            <span>A Memorable Event With Venue Reservation</span>
+                            <h2>MANAGE HALL CATEGORY</h2>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <form method="post" name="form1" action="/save_cat" class="contact-form">
+                        <div class="row">
+                          
+                            
+                            <div class="col-lg-12">
+                                <input type="text"  placeholder="Enter Category" name="txtcat" value="">
+							
+                                <button type="submit" name="btnsave" onclick="return validate();">SAVE</button>
+							
+                            </div>
+							
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-7">
+                
+                      <% if(catitems.length){ %>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>CATEGORY ID</th>
+                                    <th>CATEGORY</th>
+                                    <th>EDIT</th>
+                                    <th>DELETE</th>
+                                </tr>
+                            <% for(i=0;i<catitems.length;i++){ %>
+                                    <tr>
+                                        <td><%= catitems[i].cat_id %></td>
+                                        <td><%= catitems[i].category %></td>
+                                        <td><a href="/edit_cat/<%= catitems[i].cat_id %>">EDIT</a></td>
+                                        <td><a href="/delete_cat/<%= catitems[i].cat_id %>">DELETE</a></td>
+                                    </tr>
+                                <% } %>
+                            </table>
+                      <% }else{ %>
+                            <h2>No Category Found</h2>
+                    <% } %>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->

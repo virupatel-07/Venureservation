@@ -1,0 +1,169 @@
+<script>
+	function validate()
+	{
+		if(form1.selctype.value=="0")
+		{
+			alert("Please Select Your Card Type");
+			form1.selctype.focus();
+			return false;
+		}
+		
+		var v=/^[0-9]+$/
+		if(form1.txtcno.value=="")
+		{
+			alert("Please Enter Your Card no");
+			form1.txtcno.focus();
+			return false;
+		}else if(form1.txtcno.value.length!=16)
+		{
+			alert("Please Enter Only 16 Digits In Your Card No");
+			form1.txtcno.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtcno.value))
+			{
+				alert("Please Enter Only Digits in Your Card No");
+				form1.txtcno.focus();
+				return false;
+			}
+		}
+		
+		if(form1.txtcvvno.value=="")
+		{
+			alert("Please Enter Your CVV no");
+			form1.txtcvvno.focus();
+			return false;
+		}else if(form1.txtcvvno.value.length!=3)
+		{
+			alert("Please Enter Only 3 Digits In Your CVV No");
+			form1.txtcvvno.focus();
+			return false;
+		}
+		else{
+			if(!v.test(form1.txtcvvno.value))
+			{
+				alert("Please Enter Only Digits in Your CVV No");
+				form1.txtcvvno.focus();
+				return false;
+			}
+		}
+		
+		var v=/^[a-zA-Z ]+$/
+		if(form1.txtbname.value=="")
+		{
+			alert("Please Enter Your Bank Name");
+			form1.txtbname.focus();
+			return false;
+		}else{
+			if(!v.test(form1.txtbname.value))
+			{
+				alert("Please Enter Only Alphabets in Your Bank Name");
+				form1.txtbname.focus();
+				return false;
+			}
+		}
+		
+		if(form1.txtname.value=="")
+		{
+			alert("Please Enter Card Holder Name");
+			form1.txtname.focus();
+			return false;
+		}else{
+			if(!v.test(form1.txtname.value))
+			{
+				alert("Please Enter Only Alphabets in Card Holder Name");
+				form1.txtname.focus();
+				return false;
+			}
+		}
+		
+		
+	}
+</script>
+  <!-- Contact Section Begin -->
+  <section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <span>A Memorable Event With Venue Reservation</span>
+                        <h2>PAYMENT</h2>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form name="form1" method="post" action="/pay" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <select name="selctype">
+                                <option value="0">--Select Card Type--</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Credit Card">Credit Card</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter Card  No" name="txtcno">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter Cvv  No" name="txtcvvno">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter Bank Name" name="txtbname">
+                        </div>
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter Card Holder Name" name="txtname">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <select name="selexmonth">
+                                <option value="0">--Select Expiry Month--</option>
+                                <option value="Jan">JAN</option>
+							<option value="Feb">FEB</option>
+							<option value="Mar">MAR</option>
+							<option value="April">April</option>
+							<option value="May">MAY</option>
+							<option value="June">JUNE</option>
+							<option value="July">JULY</option>
+							<option value="Aug">AUG</option>
+							<option value="Sep">SEP</option>
+							<option value="Oct">OCT</option>
+							<option value="Nov">NOV</option>
+							<option value="Dec">DEC</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <select name="selexyear">
+                                <option value="0">--Select Expiry Year--</option>
+                                <option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+							<option value="2026">2026</option>
+							<option value="2027">2027</option>
+							<option value="2028">2028</option>
+							<option value="2029">2029</option>
+							<option value="2030">2030</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <button type="submit" name="btnpay" onclick="return validate();">PAY <%= amt %></button>
+                            <input type="hidden" name="txtbid" value="<%= bid %>">
+                            <input type="hidden" name="txtamt" value="<%= amt %>">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                
+                    <img src="img/regis4.jpg" alt="">
+                    
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->

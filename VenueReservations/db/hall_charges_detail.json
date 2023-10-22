@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6430e8e2b7a8011d1b95e88f"
+  },
+  "charge_id": 1,
+  "hall_id": 1,
+  "time_type": "12hours",
+  "hall_charge": "15000"
+},{
+  "_id": {
+    "$oid": "6430ea1acdd28a2d441410e7"
+  },
+  "charge_id": 2,
+  "hall_id": 1,
+  "time_type": "24hours",
+  "hall_charge": "30000"
+},{
+  "_id": {
+    "$oid": "6430f3f4e6acf8415a5d4c67"
+  },
+  "charge_id": 3,
+  "hall_id": 2,
+  "time_type": "12hours",
+  "hall_charge": "16000"
+},{
+  "_id": {
+    "$oid": "6430f440e6b9c6abc4a6e603"
+  },
+  "charge_id": 4,
+  "hall_id": 2,
+  "time_type": "24hours",
+  "hall_charge": "30000"
+}]

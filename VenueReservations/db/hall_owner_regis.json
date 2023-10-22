@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "642bbd1948f06f88f0d6b5d8"
+  },
+  "hall_owner_id": 1,
+  "hall_owner_name": "vikas",
+  "address": "msquare mall tithal road valsad",
+  "city": "valsad",
+  "mobile_no": "9876543210",
+  "email_id": "vikas@yahoo.com",
+  "pwd": "111111",
+  "regis_date": "2023-4-4",
+  "lic_path": "/lic_img/LI1_3278.jpg",
+  "status": 1
+},{
+  "_id": {
+    "$oid": "642bbeac3a00bed7c1b88620"
+  },
+  "hall_owner_id": 2,
+  "hall_owner_name": "krishna",
+  "address": "sai leela mall near overbridge dharampur road",
+  "city": "valsad",
+  "mobile_no": "7412589630",
+  "email_id": "krishna@yahoo.com",
+  "pwd": "111111",
+  "regis_date": "2023-4-4",
+  "lic_path": "/lic_img/LI2_7246.jpg",
+  "status": 1
+},{
+  "_id": {
+    "$oid": "642bbed93a00bed7c1b88621"
+  },
+  "hall_owner_id": 3,
+  "hall_owner_name": "vaibhav",
+  "address": "near dharmpur chowkdi",
+  "city": "valsad",
+  "mobile_no": "8596321470",
+  "email_id": "vaibhav@yahoo.com",
+  "pwd": "111111",
+  "regis_date": "2023-4-4",
+  "lic_path": "/lic_img/LI3_6209.jpg",
+  "status": 1
+}]

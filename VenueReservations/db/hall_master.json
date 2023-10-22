@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "6430d9e7691a64803f0ac482"
+  },
+  "hall_id": 1,
+  "hall_name": "Pariwar banquet",
+  "address": "m square mall\r\ntithal road\r\nvalsad",
+  "capacity": "600",
+  "description": "Hall with ac and many more amenities",
+  "no_of_chairs": "600",
+  "no_of_sofas": "60",
+  "no_of_rooms": "11",
+  "cat_id": 1,
+  "hall_owner_id": 1
+},{
+  "_id": {
+    "$oid": "6430ebb3cdd28a2d441410e8"
+  },
+  "hall_id": 2,
+  "hall_name": "regal banquet",
+  "address": "sai leela mall\r\nnear over bridge\r\nvalsad",
+  "capacity": "500",
+  "description": "best hall in valsad amenties",
+  "no_of_chairs": "500",
+  "no_of_sofas": "20",
+  "no_of_rooms": "10",
+  "cat_id": 1,
+  "hall_owner_id": 2
+}]
